@@ -1,68 +1,125 @@
 {
-    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
-    "manifestVersion": "1.14",
-    "version": "1.0.0",
-    "id": "${{TEAMS_APP_ID}}",
-    "packageName": "com.teams.sample.teamsconversationbot",
-    "developer": {
-      "name": "teamsConversationBot",
-      "websiteUrl": "https://www.microsoft.com",
-      "privacyUrl": "https://www.teams.com/privacy",
-      "termsOfUseUrl": "https://www.teams.com/termsofuser"
-    },
-    "icons": {
-      "outline": "outline.png",
-      "color": "color.png"
-    },
-    "name": {
-      "short": "TeamsConversationBot",
-      "full": "TeamsConversationBot"
-    },
-    "description": {
-      "short": "TeamsConversationBot",
-      "full": "TeamsConversationBot"
-    },
-    "accentColor": "#FFFFFF",
-    "bots": [
-      {
-        "botId": "${{AAD_APP_CLIENT_ID}}",
-        "scopes": [
-          "personal",
-          "groupchat",
-          "team"
-        ],
-        "isNotificationOnly": false,
-        "supportsCalling": false,
-        "supportsVideo": false,
-        "supportsFiles": false,
-          "commandLists": [
-          {
-            "scopes": [
-              "personal",
-              "groupchat",
-              "team"
-            ],
-            "commands": [
-              {
-                "title": "MentionMe",
-                "description": "Sends message with @mention of the sender"
-              },
-              {
-                "title": "Show Welcome",
-                "description": "Shows the welcome card"
-              },
-              {
-                "title": "MessageAllMembers",
-                "description": "Send 1 to 1 message to all members of the current conversation"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "permissions": [
-      "identity",
-      "messageTeamMembers"
-    ],
-    "validDomains": ["${{BOT_DOMAIN}}"]
-  }
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+	"version": "1.0.0",
+	"manifestVersion": "1.16",
+	"id": "53dd95a9-7517-469f-a16e-6ab3e145009f",
+	"packageName": "com.package.name",
+	"name": {
+		"short": "AskUrDB",
+		"full": "Ask Your Database"
+	},
+	"developer": {
+		"name": "teamsConversationBot",
+		"mpnId": "",
+		"websiteUrl": "https://www.microsoft.com",
+		"privacyUrl": "https://www.teams.com/privacy",
+		"termsOfUseUrl": "https://www.teams.com/termsofuser"
+	},
+	"description": {
+		"short": "Ask your Database",
+		"full": "Ask your Database"
+	},
+	"icons": {
+		"outline": "outline.png",
+		"color": "color.png"
+	},
+	"accentColor": "#FFFFFF",
+	"staticTabs": [
+		{
+			"entityId": "conversations",
+			"scopes": [
+				"personal"
+			]
+		},
+		{
+			"entityId": "about",
+			"scopes": [
+				"personal"
+			]
+		}
+	],
+	"bots": [
+		{
+			"botId": "53dd95a9-7517-469f-a16e-6ab3e145009f",
+			"scopes": [
+				"personal",
+				"team",
+				"groupchat"
+			],
+			"supportsFiles": false,
+			"isNotificationOnly": false
+		}
+	],
+	"validDomains": [
+		"elephant-sincere-globally.ngrok-free.app"
+	],
+	"webApplicationInfo": {
+		"id": "53dd95a9-7517-469f-a16e-6ab3e145009f",
+		"resource": ""
+	},
+	"devicePermissions": [
+		"openExternal"
+	],
+	"authorization": {
+		"permissions": {
+			"resourceSpecific": [
+				{
+					"name": "TeamsActivity.Send.User",
+					"type": "Application"
+				},
+				{
+					"name": "MicrophoneStream.Read.User",
+					"type": "Delegated"
+				},
+				{
+					"name": "CameraStream.Read.User",
+					"type": "Delegated"
+				},
+				{
+					"name": "LiveShareSession.ReadWrite.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "MeetingParticipantReaction.Read.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "OnlineMeetingParticipant.Read.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "OnlineMeetingIncomingAudio.Detect.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "OnlineMeetingAudioVideo.Stream.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "OnlineMeetingActiveSpeaker.Read.Chat",
+					"type": "Delegated"
+				},
+				{
+					"name": "Chat.Manage.Chat",
+					"type": "Application"
+				},
+				{
+					"name": "ChatMember.Read.Chat",
+					"type": "Application"
+				},
+				{
+					"name": "ChatMessage.Read.Chat",
+					"type": "Application"
+				},
+				{
+					"name": "ChatMessage.Send.Chat",
+					"type": "Application"
+				},
+				{
+					"name": "ChatMessageReadReceipt.Read.Chat",
+					"type": "Application"
+				}
+			]
+		}
+	}
+}

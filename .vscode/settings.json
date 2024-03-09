@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "obj": true,
+        "bin": true
+    },
+    "azureFunctions.deploySubpath": "samples/m365-actions-preview/nodejs/api",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "JavaScript",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectSubpath": "samples/m365-actions-preview/nodejs/api",
+    "azureFunctions.preDeployTask": "npm prune (functions)"
+}
